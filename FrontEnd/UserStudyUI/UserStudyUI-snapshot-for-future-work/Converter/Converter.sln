@@ -1,0 +1,53 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converter", "Converter.csproj", "{7077A0E7-E282-4F87-AD63-04B3EE485246}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sketch", "..\Sketch\Sketch.csproj", "{84AE0BC9-B169-4B44-B320-4825D027BD2C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConverter", "..\TestConverter\TestConverter.csproj", "{EA25FDC4-FDE1-429B-8551-9E20A4C8358E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Featurefy", "..\Featurefy\Featurefy.csproj", "{C2043A9A-A7CA-43AC-A4DF-318A32BCB165}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Segment", "..\Segment\Segment.csproj", "{F8323D9F-F02D-4280-9C7B-16438BFDD92C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{7077A0E7-E282-4F87-AD63-04B3EE485246}.Debug.ActiveCfg = Debug|.NET
+		{7077A0E7-E282-4F87-AD63-04B3EE485246}.Debug.Build.0 = Debug|.NET
+		{7077A0E7-E282-4F87-AD63-04B3EE485246}.Release.ActiveCfg = Release|.NET
+		{7077A0E7-E282-4F87-AD63-04B3EE485246}.Release.Build.0 = Release|.NET
+		{84AE0BC9-B169-4B44-B320-4825D027BD2C}.Debug.ActiveCfg = Debug|.NET
+		{84AE0BC9-B169-4B44-B320-4825D027BD2C}.Debug.Build.0 = Debug|.NET
+		{84AE0BC9-B169-4B44-B320-4825D027BD2C}.Release.ActiveCfg = Release|.NET
+		{84AE0BC9-B169-4B44-B320-4825D027BD2C}.Release.Build.0 = Release|.NET
+		{EA25FDC4-FDE1-429B-8551-9E20A4C8358E}.Debug.ActiveCfg = Debug|.NET
+		{EA25FDC4-FDE1-429B-8551-9E20A4C8358E}.Debug.Build.0 = Debug|.NET
+		{EA25FDC4-FDE1-429B-8551-9E20A4C8358E}.Release.ActiveCfg = Release|.NET
+		{EA25FDC4-FDE1-429B-8551-9E20A4C8358E}.Release.Build.0 = Release|.NET
+		{C2043A9A-A7CA-43AC-A4DF-318A32BCB165}.Debug.ActiveCfg = Debug|.NET
+		{C2043A9A-A7CA-43AC-A4DF-318A32BCB165}.Debug.Build.0 = Debug|.NET
+		{C2043A9A-A7CA-43AC-A4DF-318A32BCB165}.Release.ActiveCfg = Release|.NET
+		{C2043A9A-A7CA-43AC-A4DF-318A32BCB165}.Release.Build.0 = Release|.NET
+		{F8323D9F-F02D-4280-9C7B-16438BFDD92C}.Debug.ActiveCfg = Debug|.NET
+		{F8323D9F-F02D-4280-9C7B-16438BFDD92C}.Debug.Build.0 = Debug|.NET
+		{F8323D9F-F02D-4280-9C7B-16438BFDD92C}.Release.ActiveCfg = Release|.NET
+		{F8323D9F-F02D-4280-9C7B-16438BFDD92C}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

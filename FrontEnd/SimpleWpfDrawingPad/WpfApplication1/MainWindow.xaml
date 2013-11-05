@@ -1,0 +1,11 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DrawingPad" Height="550" Width="370"
+        Background="ForestGreen">
+    <Grid>
+        <InkCanvas Background="LightYellow"  Width="Auto" Height="Auto" HorizontalAlignment="Stretch" Margin="9,9,9,68" Name="inkCanvas1" VerticalAlignment="Stretch" />
+        <Button Content="Clear" Height="40" HorizontalAlignment="Left" Margin="70,0,0,16" Name="button1" VerticalAlignment="Bottom" Width="90" FontSize="16" Click="ClearButton_Click" />
+        <Button Content="Close" Height="40" HorizontalAlignment="Right" Margin="0,0,65,16" Name="button2" VerticalAlignment="Bottom" Width="90" FontSize="16" Click="closeButton_Click" />
+    </Grid>
+</Window>

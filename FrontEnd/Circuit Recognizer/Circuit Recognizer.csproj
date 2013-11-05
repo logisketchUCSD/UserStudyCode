@@ -1,0 +1,147 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{72A5EC6C-B79F-48A8-B48C-E9F9F4AFD4E1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Circuit_Recognizer</RootNamespace>
+    <AssemblyName>Circuit Recognizer</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Ink, Version=1.7.2600.2180, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\\Microsoft Tablet PC Platform SDK\Include\Microsoft.Ink.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlignerResultsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlignerResultsForm.Designer.cs">
+      <DependentUpon>AlignerResultsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CircuitRecognizer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CircuitRecognizer.Designer.cs">
+      <DependentUpon>CircuitRecognizer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlignerResultsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AlignerResultsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CircuitRecognizer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CircuitRecognizer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Recognition\Clusterer\Clusterer\Clusterer.csproj">
+      <Project>{44C2DF8C-4D4D-4E71-A89F-8E6FC7560CD7}</Project>
+      <Name>Clusterer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Recognition\Featurefy\Featurefy.csproj">
+      <Project>{C2043A9A-A7CA-43AC-A4DF-318A32BCB165}</Project>
+      <Name>Featurefy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Recognition\ImageAligner\ImageAligner.csproj">
+      <Project>{7EB7BDC8-0543-40E8-B4B6-CEC4A8B17B40}</Project>
+      <Name>ImageAligner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Recognition\ImageRecognizerWrapper\ImageRecognizerWrapper\ImageRecognizerWrapper.csproj">
+      <Project>{C450E3B0-FD30-4D99-8660-2069DD867048}</Project>
+      <Name>ImageRecognizerWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Recognition\StrokeClassifier\StrokeClassifier\StrokeClassifier.csproj">
+      <Project>{D47F3564-85FB-4222-87FF-2F6E87E11B46}</Project>
+      <Name>StrokeClassifier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Recognition\StrokeGrouper\StrokeGrouper\StrokeGrouper.csproj">
+      <Project>{BC4A1FAE-A157-4050-B257-F131D3AD6B9D}</Project>
+      <Name>StrokeGrouper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\ConverterXML\ConverterXML.csproj">
+      <Project>{165389E7-414D-49BB-B958-4B521AA1D452}</Project>
+      <Name>ConverterXML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\DisplayManager\DisplayManager.csproj">
+      <Project>{B20A9A31-0E43-4193-A7AB-7DBB7D1DC6BC}</Project>
+      <Name>DisplayManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\InkToSketch\InkToSketch.csproj">
+      <Project>{B9EACD91-C346-4D1F-B818-949C54F031D0}</Project>
+      <Name>InkToSketch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\Labeler\Labeler.csproj">
+      <Project>{A98A0500-F260-431C-A80E-E77FA66081AD}</Project>
+      <Name>Labeler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\Sketch\Sketch.csproj">
+      <Project>{84AE0BC9-B169-4B44-B320-4825D027BD2C}</Project>
+      <Name>Sketch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\Utilities\Utilities\Utilities.csproj">
+      <Project>{7C9A72A3-E426-4312-9F31-AE340B0EF4C8}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SketchPanel\SketchPanel.csproj">
+      <Project>{95C4EC3A-544E-4D26-BB33-70208B193F83}</Project>
+      <Name>SketchPanel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerilogWriter", "..\..\..\Util\VerilogWriter\VerilogWriter.csproj", "{6F05B746-4A15-408E-AD2C-8B7871DD1126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNets", "..\..\..\Recognition\NeuralNet\NeuralNets\NeuralNets.csproj", "{8216E3F6-DC1C-456E-AEE0-43FB5FBA6A5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextRecognition", "..\..\..\Util\TextRecognition\TextRecognition.csproj", "{04576B24-FE25-4C82-B6D2-94200C58434C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruthTables", "..\..\..\Recognition\TruthTables\TruthTables\TruthTables.csproj", "{41E85F1E-462E-4CA7-8FF3-E8EDF9579CB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircuitRec", "..\..\..\Recognition\CircuitRec\CircuitRec.csproj", "{467929AF-0648-4716-8631-DE4C045B1A8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pin", "..\..\..\Util\Pin\Pin\Pin.csproj", "{8D2FA6D8-9054-47AF-9B59-3DD47EFB8E8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uiWorkPathTester", "uiWorkPathTester\uiWorkPathTester.csproj", "{6A599FCB-D94E-486F-8947-B2E46315AED5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F05B746-4A15-408E-AD2C-8B7871DD1126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F05B746-4A15-408E-AD2C-8B7871DD1126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F05B746-4A15-408E-AD2C-8B7871DD1126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F05B746-4A15-408E-AD2C-8B7871DD1126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8216E3F6-DC1C-456E-AEE0-43FB5FBA6A5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8216E3F6-DC1C-456E-AEE0-43FB5FBA6A5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8216E3F6-DC1C-456E-AEE0-43FB5FBA6A5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8216E3F6-DC1C-456E-AEE0-43FB5FBA6A5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04576B24-FE25-4C82-B6D2-94200C58434C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04576B24-FE25-4C82-B6D2-94200C58434C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04576B24-FE25-4C82-B6D2-94200C58434C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04576B24-FE25-4C82-B6D2-94200C58434C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41E85F1E-462E-4CA7-8FF3-E8EDF9579CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41E85F1E-462E-4CA7-8FF3-E8EDF9579CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41E85F1E-462E-4CA7-8FF3-E8EDF9579CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41E85F1E-462E-4CA7-8FF3-E8EDF9579CB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{467929AF-0648-4716-8631-DE4C045B1A8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{467929AF-0648-4716-8631-DE4C045B1A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{467929AF-0648-4716-8631-DE4C045B1A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{467929AF-0648-4716-8631-DE4C045B1A8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D2FA6D8-9054-47AF-9B59-3DD47EFB8E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2FA6D8-9054-47AF-9B59-3DD47EFB8E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2FA6D8-9054-47AF-9B59-3DD47EFB8E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2FA6D8-9054-47AF-9B59-3DD47EFB8E8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A599FCB-D94E-486F-8947-B2E46315AED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A599FCB-D94E-486F-8947-B2E46315AED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A599FCB-D94E-486F-8947-B2E46315AED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A599FCB-D94E-486F-8947-B2E46315AED5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

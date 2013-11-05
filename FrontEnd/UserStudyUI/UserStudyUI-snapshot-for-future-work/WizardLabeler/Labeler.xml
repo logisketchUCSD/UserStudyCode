@@ -1,0 +1,814 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Labeler</name>
+    </assembly>
+    <members>
+        <member name="T:CommandManagement.Command">
+            <summary>
+            Summary description for Command.
+            </summary>
+        </member>
+        <member name="M:CommandManagement.Command.Execute">
+            <summary>
+            Execute the Command
+            </summary>
+        </member>
+        <member name="M:CommandManagement.Command.UnExecute">
+            <summary>
+            Unexecute the Command
+            </summary>
+        </member>
+        <member name="M:CommandManagement.Command.IsUndoable">
+            <summary>
+            Is the Command undoable?
+            </summary>
+            <returns>True iff the Command is undoable</returns>
+        </member>
+        <member name="P:CommandManagement.Command.Manager">
+            <summary>
+            Get the CommandManager
+            </summary>
+        </member>
+        <member name="T:Labeler.CommandList">
+            <summary>
+            Summary description for Commands.
+            </summary>
+        </member>
+        <member name="T:Labeler.CommandList.ApplyLabel">
+            <summary>
+            Apply's a label to substrokes
+            </summary>
+        </member>
+        <member name="F:Labeler.CommandList.ApplyLabel.isUndoable">
+            <summary>
+            Is the command undoable?
+            </summary>
+        </member>
+        <member name="F:Labeler.CommandList.ApplyLabel.sketch">
+            <summary>
+            Sketch to contain the labeled shape
+            </summary>
+        </member>
+        <member name="F:Labeler.CommandList.ApplyLabel.substrokes">
+            <summary>
+            Substroke to apply the label to
+            </summary>
+        </member>
+        <member name="F:Labeler.CommandList.ApplyLabel.label">
+            <summary>
+            Label to apply
+            </summary>
+        </member>
+        <member name="F:Labeler.CommandList.ApplyLabel.labelColor">
+            <summary>
+            Label's color
+            </summary>
+        </member>
+        <member name="F:Labeler.CommandList.ApplyLabel.labeledShape">
+            <summary>
+            Labeled shape resulting from applying a label
+            </summary>
+        </member>
+        <member name="F:Labeler.CommandList.ApplyLabel.inkStrokes">
+            <summary>
+            Necessary to apply and undo InkOverlay changes
+            </summary>
+        </member>
+        <member name="F:Labeler.CommandList.ApplyLabel.origColors">
+            <summary>
+            Necessary to undo color changes when applying a label
+            </summary>
+        </member>
+        <member name="M:Labeler.CommandList.ApplyLabel.#ctor(Sketch.Sketch,System.Collections.ArrayList,System.String,System.Drawing.Color,Microsoft.Ink.Strokes)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="sketch">Sketch to add a label to</param>
+            <param name="substrokes">Substrokes to label</param>
+            <param name="label">Label to apply</param>
+            <param name="labelColor">Color of the applied label</param>
+            <param name="inkStrokes">InkOverlay strokes</param>
+        </member>
+        <member name="M:Labeler.CommandList.ApplyLabel.Execute">
+            <summary>
+            Applies a label to a group of substrokes.
+            </summary>
+        </member>
+        <member name="M:Labeler.CommandList.ApplyLabel.UnExecute">
+            <summary>
+            Removes a labeled shape from a sketch.
+            </summary>
+        </member>
+        <member name="M:Labeler.CommandList.ApplyLabel.IsUndoable">
+            <summary>
+            Returns if the command is undoable.
+            </summary>
+            <returns>True iff the command is undoable</returns>
+        </member>
+        <member name="F:Labeler.CommandList.SplitStrokeAt.isUndoable">
+            <summary>
+            This Command is undoable.
+            </summary>
+        </member>
+        <member name="F:Labeler.CommandList.SplitStrokeAt.oInk">
+            <summary>
+            InkOverlay for the Labeler.
+            </summary>
+        </member>
+        <member name="F:Labeler.CommandList.SplitStrokeAt.splitStroke">
+            <summary>
+            Editing stroke to split.
+            </summary>
+        </member>
+        <member name="F:Labeler.CommandList.SplitStrokeAt.pointInter">
+            <summary>
+            Intersection points between the splitter stroke and the InkOverlay strokes.
+            </summary>
+        </member>
+        <member name="F:Labeler.CommandList.SplitStrokeAt.mIdToIndices">
+            <summary>
+            The Labeler's mIdToIndices that holds Microsoft.Stroke Ids and various split points in
+            ArrayLists
+            </summary>
+        </member>
+        <member name="F:Labeler.CommandList.SplitStrokeAt.newMIdToIndices">
+            <summary>
+            A temporary version of the mIdToIndices variable, used for undoing this Command.
+            </summary>
+        </member>
+        <member name="M:Labeler.CommandList.SplitStrokeAt.#ctor(Microsoft.Ink.InkOverlay,Microsoft.Ink.Stroke,System.Drawing.Point[],System.Collections.Hashtable,System.Windows.Forms.ProgressBar)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="oInk"></param>
+            <param name="splitStroke"></param>
+            <param name="pointInter"></param>
+            <param name="mIdToIndices"></param>
+            <param name="progressBar"></param>
+        </member>
+        <member name="M:Labeler.CommandList.SplitStrokeAt.Execute">
+            <summary>
+            Marks points to be split in the InkOverlay.
+            </summary>
+        </member>
+        <member name="M:Labeler.CommandList.SplitStrokeAt.UnExecute">
+            <summary>
+            Undoes the addition of split points in the InkOverlay.
+            </summary>
+        </member>
+        <member name="M:Labeler.CommandList.SplitStrokeAt.IsUndoable">
+            <summary>
+            Returns whether this Command is undoable or not.
+            </summary>
+            <returns>Returns true iff this Command is undoable.</returns>
+        </member>
+        <member name="T:CommandManagement.CommandManager">
+            <summary>
+            Summary description for CommandManager.
+            </summary>
+        </member>
+        <member name="M:CommandManagement.CommandManager.#ctor">
+            <summary>
+            Constructor
+            
+            Utilizes an Undo and Redo stack to handle Commands
+            </summary>
+        </member>
+        <member name="M:CommandManagement.CommandManager.ExecuteCommand(CommandManagement.Command)">
+            <summary>
+            Executes a Command and places it onto the Undo stack, if appropriate.
+            </summary>
+            <param name="command">Command to execute</param>
+        </member>
+        <member name="M:CommandManagement.CommandManager.Undo">
+            <summary>
+            Undos the last (undoable) Command.
+            </summary>
+            <returns>True if a Command is unexecuted</returns>
+        </member>
+        <member name="M:CommandManagement.CommandManager.Redo">
+            <summary>
+            Redos the last undone Command.
+            </summary>
+            <returns>True if a Command is re-executed</returns>
+        </member>
+        <member name="M:CommandManagement.CommandManager.ClearStacks">
+            <summary>
+            Clears both the Undo and Redo stacks.
+            </summary>
+        </member>
+        <member name="T:Labeler.DomainInfo">
+            <summary>
+            Create a new container to hold domain information for the labeler
+            </summary>
+        </member>
+        <member name="F:Labeler.DomainInfo.labelsToNums">
+            <summary>
+            Hashtable containing string labels to integer values
+            </summary>
+        </member>
+        <member name="F:Labeler.DomainInfo.numsToLabels">
+            <summary>
+            Hashtable containing integer values to string labels
+            </summary>
+        </member>
+        <member name="F:Labeler.DomainInfo.labelsToColors">
+            <summary>
+            Hashtable containing string labels to colors
+            </summary>
+        </member>
+        <member name="F:Labeler.DomainInfo.numsToColors">
+            <summary>
+            Hashtable containing colors to string labels
+            </summary>
+        </member>
+        <member name="F:Labeler.DomainInfo.info">
+            <summary>
+            Information about the Domain
+            </summary>
+        </member>
+        <member name="M:Labeler.DomainInfo.#ctor">
+            <summary>
+            Constructor. Initializes the Hashtables.
+            </summary>
+        </member>
+        <member name="M:Labeler.DomainInfo.addLabel(System.Int32,System.String,System.Drawing.Color)">
+            <summary>
+            Adds a label with the corresponding name, int value, and color.
+            </summary>
+            <param name="num">Integer value corresponding to the Label</param>
+            <param name="name">Name of the label</param>
+            <param name="color">Color of the label</param>
+        </member>
+        <member name="M:Labeler.DomainInfo.getLabel(System.Int32)">
+            <summary>
+            Gets a label by its corresponding integer representation.
+            </summary>
+            <param name="num">Integer value of the label</param>
+            <returns>The name of the label</returns>
+        </member>
+        <member name="M:Labeler.DomainInfo.getLabels">
+            <summary>
+            Gets an ArrayList of all the labels in the Domain.
+            </summary>
+            <returns>All of the labels in the Domain</returns>
+        </member>
+        <member name="M:Labeler.DomainInfo.getLabelNumber(System.String)">
+            <summary>
+            Gets a label's integer representation.
+            </summary>
+            <param name="label">The name of the label</param>
+            <returns>The label's integer value</returns>
+        </member>
+        <member name="M:Labeler.DomainInfo.getColor(System.String)">
+            <summary>
+            Gets the System.Drawing.Color of a given label.
+            </summary>
+            <param name="label">The name of the label</param>
+            <returns>The color of the label</returns>
+        </member>
+        <member name="M:Labeler.DomainInfo.addInfo(System.String,System.String)">
+            <summary>
+            Adds information about the Domain to the corresponding hashtable.
+            </summary>
+            <param name="key">Information's key</param>
+            <param name="val">Information's value</param>
+        </member>
+        <member name="M:Labeler.DomainInfo.getInfo(System.String)">
+            <summary>
+            Gets information about the Domain, given a valid key.
+            </summary>
+            <param name="key">Information's key</param>
+            <returns>Information's value</returns>
+        </member>
+        <member name="T:Labeler.Form1">
+            <summary>
+            Summary description for Form1.
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.CM">
+            <summary>
+            CommandManager for the Labeler instance.
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.commands">
+            <summary>
+            List of Commands for the Labeler instance.
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.sketch">
+            <summary>
+            The Sketch we will be using in the Labeler.
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.oInk">
+            <summary>
+            The InkOverlay we place ontop of our drawing panel. Holds all of the strokes to draw 
+            and provides scaling and rendering functions.
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.mIdToSubstroke">
+            <summary>
+            Hashtable from Microsoft Stroke Ids to Sketch.Substroke Ids.
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.mIdToInkIndex">
+            <summary>
+            Hashtable from Microsoft Stroke Ids to their corresponding indices in the InkOverlay.
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.mIdToIndices">
+            <summary>
+            Hashtable mapping a Microsoft.Stroke's Id to the indices where the stroke should be split
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.totalScale">
+            <summary>
+            Total scaling factor from the original size.
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.prevScale">
+            <summary>
+            Previous scaling factor. Used when typing in a scale from the zoom text box.
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.newScale">
+            <summary>
+            New scaling factor. Used when typing in a scale from the zoom text box.
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.ScrollPos">
+            <summary>
+            The scrollbar positions, corresponding to how much the InkOverlay should be scrolled by.
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.socketServer">
+            <summary>
+            The SocketServer that sends XML of labeled sketches to User Study UI clients
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.cachedSketchXml">
+            <summary>
+            The most recent sketch received from the user
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.splitStrokes">
+            <summary>
+            Stores GUIDs of all the Sketch.Strokes that the Labeler has split.
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.DefaultDomainFilePath">
+            <summary>
+            Default location of standard logic gates domain file.
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.FileMenu">
+            <summary>
+            Statistics used to notify Wizard of when to trigger errors
+            </summary>
+        </member>
+        <member name="F:Labeler.Form1.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.#ctor">
+            <summary>
+            Main form initialization. Creates all the components specified in the Form design
+            from Visual Studio. Also creates the InkOverlay for the form.
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.openXmlMI_Click(System.Object,System.EventArgs)">
+            <summary>
+            Starts the "Open" dialog allowing the user to open an MIT XML file.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.openXmlBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Starts the "Open" dialog allowing the user to open an MIT XML file.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.loadDomainMI_Click(System.Object,System.EventArgs)">
+            <summary>
+            Starts the "Load Domain File" dialog allowing the user to open a domain file.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.loadDomainBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Starts the "Open Domain File" dialog allowing the user to open a domain file.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.loadDomain(System.IO.StreamReader)">
+            <summary>
+            Loads the domain file
+            </summary>
+            <param name="sr">IO stream</param>
+        </member>
+        <member name="M:Labeler.Form1.saveXmlMI_Click(System.Object,System.EventArgs)">
+            <summary>
+            Starts the "Save As" dialog allowing the user to save a labeled MIT XML file.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.saveXmlBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Starts the "Save" dialog allowing the user to save a labeled MIT XML file.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.exitMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Exits the program
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.undoMI_Click(System.Object,System.EventArgs)">
+            <summary>
+            Undo the previous undoable Command.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.redoMI_Click(System.Object,System.EventArgs)">
+            <summary>
+            Redo the previous Undo.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.selectModeBtn_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Changes the GUI mode to select
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.editModeBtn_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Changes the GUI mode to edit
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.Form1_Resize(System.Object,System.EventArgs)">
+            <summary>
+            Resizes the InkOverlay's strokes when the application's window is resized
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.labelButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Labels a current selection with the current shapeLabel's properties.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.applyLabelMI_Click(System.Object,System.EventArgs)">
+            <summary>
+            Hotkey for applying labels: Ctrl+A
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.commitBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Commits the strokes split during the editing mode.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.cancelBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Cancels any stroke splitting we have done in the editing mode
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.oInk_SelectionMoved(System.Object,Microsoft.Ink.InkOverlaySelectionMovedEventArgs)">
+            <summary>
+            Handles the InkOverlay to ensure that displayed strokes have not been moved.
+            Code pulled from: http://windowssdk.msdn.microsoft.com/en-us/library/microsoft.ink.inkoverlay.selectionmoved.aspx
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Selection moving event</param>
+        </member>
+        <member name="M:Labeler.Form1.oInk_SelectionResized(System.Object,Microsoft.Ink.InkOverlaySelectionResizedEventArgs)">
+            <summary>
+            Handles the InkOverlay to ensure that displayed strokes have not been resized.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Selection resizing event</param>
+        </member>
+        <member name="M:Labeler.Form1.oInk_SystemGesture(System.Object,Microsoft.Ink.InkCollectorSystemGestureEventArgs)">
+            <summary>
+            Handler for various SystemGesture in the InkOverlay.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the SystemGesture event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.oInk_Painted(System.Object,System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Paints all of the end and split points on the InkOverlay strokes whenever the InkOverlay
+            is repainted.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes a paint events object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.FormResize">
+            <summary>
+            Resizes the rendered InkOverlay so that the ink will be as large as possible while still
+            displaying the file in its entirety.
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.HandleScroll">
+            <summary>
+            Creates a new ViewTransform matrix that shifts the image based on the scrollbar positions.
+            Converts the scrollbar pixels into Ink Space coordinates and then shifts the rendered ink
+            by that amount.
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.hScrollBar_Scroll(System.Object,System.Windows.Forms.ScrollEventArgs)">
+            <summary>
+            Activates whenever the horizontal scroll bar is used.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes a scroll object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.vScrollBar_Scroll(System.Object,System.Windows.Forms.ScrollEventArgs)">
+            <summary>
+            Activates whenever the vertical scroll bar is used.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes a scroll object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.drawEndPts(System.Drawing.Graphics,System.Drawing.Color)">
+            <summary>
+            Highlights the end points of strokes in the specified color.
+            </summary>
+            <param name="g">Drawing panel graphics</param>
+            <param name="color">Color to draw the points in</param>
+        </member>
+        <member name="M:Labeler.Form1.drawSplitPts(System.Drawing.Graphics,System.Drawing.Color)">
+            <summary>
+            Highlights the points where a stroke will be split in the specified color.
+            </summary>
+            <param name="g">Drawing panel graphics</param>
+            <param name="color">Color to draw the points in</param>
+        </member>
+        <member name="M:Labeler.Form1.highlightPoints(System.Drawing.Graphics,System.Drawing.Point[],System.Drawing.Color)">
+            <summary>
+            Highlights a given array of points a certain color.
+            </summary>
+            <param name="g">The panel's graphics</param>
+            <param name="points">Points to highlight</param>
+            <param name="color">Color of the highlighted points</param>
+            <remarks>Creates a new stroke from each point and renders the stroke/point using certain attributes
+            such as color, width, and height</remarks>
+        </member>
+        <member name="M:Labeler.Form1.changeModeSelect">
+            <summary>
+            Changes the current GUI mode to selection, allowing the user to select strokes.
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.changeModeEdit">
+            <summary>
+            Changes the current GUI mode to editing, allowing the user to split strokes.
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.panelWidthBox_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            If the checkbox is checked, then update the ink's zoom based on the panel width. Otherwise
+            we will update the zoom based on the value in the zoom text box.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.highlightEnd_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Do nothing... 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Labeler.Form1.zoomTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Updates the zoom factor of the image from the text entered into the zoom text box
+            every time the text is changed.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.zoomInBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Zooms in by a factor of 1 each time you click the button.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.zoomOutBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Zooms out by a factor of 1 each time you click the button.
+            When the zoom scale is less than 1, it divides the zoom by half each time.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.getScaleFromBox">
+            <summary>
+            Updates the zoom factor of the image from the text entered into the zoom text box.
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.updateColorsFromLabels">
+            <summary>
+            Updates the colors of the InkOverlay strokes based on the labels we have in the domain.
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.oInk_MouseMove(System.Object,Microsoft.Ink.CancelMouseEventArgs)">
+            <summary>
+            Displays a ToolTip for a Substroke based on where the mouse is located.
+            
+            NOTE: It's a little jittery when you move, but I'm not sure if that is due to the closest Substroke
+            calculations or redisplaying it.		
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.updateInkOverlay(Sketch.Sketch,Microsoft.Ink.InkOverlay)">
+            <summary>
+            Updates the InkOverlay by deleting all of the currently stored strokes and creating
+            new strokes from the given Sketch's Substrokes.
+            </summary>
+            <param name="sketch">Sketch to extract substrokes from</param>
+            <param name="oInk">InkOverlay to update</param>
+        </member>
+        <member name="M:Labeler.Form1.strokeSplitHandler(System.Object,Microsoft.Ink.InkCollectorStrokeEventArgs)">
+            <summary>
+            Checks what mode we are in to see if we should split strokes.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.selectModeStroke(System.Object,Microsoft.Ink.InkCollectorStrokeEventArgs)">
+            <summary>
+            Does nothing.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.inkModeStroke(System.Object,Microsoft.Ink.InkCollectorStrokeEventArgs)">
+            <summary>
+            Finds the intersections of the editing stroke with the actual stroke collection.
+            </summary>
+            <param name="sender">Reference to the object that raised the event</param>
+            <param name="e">Passes an object specific to the event that is being handled</param>
+        </member>
+        <member name="M:Labeler.Form1.splitAll">
+            <summary>
+            Splits the actual ink object into multiple strokes, indicated by
+            the changes made in ink mode
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.floatToPoint(Microsoft.Ink.Stroke,System.Single)">
+            <summary>
+            Get the Point at a floating point index. 
+            See http://msdn.microsoft.com/library/default.asp?url=/library/en-us/tpcsdk10/lonestar/Microsoft.Ink/Classes/stroke/Methods/getpoint.asp.
+            </summary>
+            <param name="theStroke">Stroke</param>
+            <param name="theFIndex">Floating point index</param>
+            <returns>A point on the stroke</returns>
+        </member>
+        <member name="M:Labeler.Form1.floatsToPoints(Microsoft.Ink.Stroke,System.Single[])">
+            <summary>
+            Get the Point array from an array of float indices
+            </summary>
+            <param name="stroke">Stroke</param>
+            <param name="indices">Floating point indices</param>
+            <returns>An array of points on the stroke</returns>
+        </member>
+        <member name="M:Labeler.Form1.networkSketchReceived(System.String,System.Boolean)">
+            <summary>
+            Callback that handles sketches from the User.  The SocketServer
+            forwards each full sketch XML received to the Labeler.  This method 
+            unmarshalls the received sketch and caches the new sketch internally.
+            </summary>
+            <param name="sketchXml">The XML string that the User sent.</param>
+            <param name="userTriggered">True iff the user triggered recognition</param>
+        </member>
+        <member name="M:Labeler.Form1.sendXmlMi_Click(System.Object,System.EventArgs)">
+            <summary>
+            Sends the current sketch to the User via the SocketServer.
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.refreshXmlMI_Click(System.Object,System.EventArgs)">
+            <summary>
+            Refreshes the Labeler display with the latest sketch received from the user.
+            Merges labeled and segmented strokes between the current and new sketches.
+            </summary>
+        </member>
+        <member name="M:Labeler.Form1.updateStatusText(System.String)">
+            <summary>
+            Updates the status text.
+            <see cref="T:Labeler.Form1.StatusUpdateHandler"/>
+            </summary>
+            <param name="statusText"></param>
+        </member>
+        <member name="M:Labeler.Form1.toggleSocketServerMI_Click(System.Object,System.EventArgs)">
+            <summary>
+            Toggles the visibility of the SocketServer
+            </summary>
+        </member>
+        <member name="T:Labeler.Form1.NetworkSketchReceivedEventHandler">
+            <summary>
+            Delegate for receiving new sketches to label from a networked user.
+            </summary>
+        </member>
+        <member name="T:Labeler.Form1.StatusUpdateHandler">
+            <summary>
+            Delegate for updating the status bar from the SocketServer thread.  When a 
+            sketch is received, the SocketServer creates a new thread which cannot
+            modify the UI, thus the SocketServer must send a status update using
+            this delegate.
+            See in UserStudyUIForm.cs region "Hooks for Wizard Recognizer + Text Labels"
+            </summary>
+        </member>
+        <member name="T:DefaultNamespace.SocketServer">
+            <summary>
+            Description of SocketServer.	
+            </summary>
+        </member>
+        <member name="M:DefaultNamespace.SocketServer.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="F:DefaultNamespace.SocketServer.SketchEndTag">
+            <summary>
+            The XML end tag to look for in a received text message
+            </summary>
+        </member>
+        <member name="F:DefaultNamespace.SocketServer.UserTriggeredTag">
+            <summary>
+            The tag to send ahead of a sketch when the user triggers
+            recognition for a sketch.
+            </summary>
+        </member>
+        <member name="F:DefaultNamespace.SocketServer.rxStr">
+            <summary>
+            String buffers for holding transmitted and received data;
+            faster than using the original RichTextBoxes
+            </summary>
+        </member>
+        <member name="M:DefaultNamespace.SocketServer.SketchXMLReceived">
+            <summary>
+            Searches the received text for a SketchEndTag and 
+            sends the received XML to the Labeler when
+            transmission is complete.
+            </summary>
+        </member>
+        <member name="M:DefaultNamespace.SocketServer.startSocketServerListen">
+            <summary>
+            Starts the SocketServer (provides public access to start function).
+            </summary>
+        </member>
+        <member name="E:DefaultNamespace.SocketServer.NetworkSketchReceivedEvent">
+            <summary>
+            Event for sending received sketch XML to the Labeler.
+            </summary>
+        </member>
+        <member name="P:DefaultNamespace.SocketServer.SendText">
+            <summary>
+            Sends text (e.g., sketch XML) to all connected
+            SocketClients.
+            </summary>
+        </member>
+    </members>
+</doc>

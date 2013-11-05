@@ -1,0 +1,11 @@
+﻿<Window x:Class="CleanCircuitWindow.CleanWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cleaned Circuit" Height="Auto" Width="Auto" Background="Linen" FontSize="14"
+        SizeChanged="Window_SizeChanged" Closed="Window_Closed">
+    <Grid>
+        <DockPanel Name="cleanDock" Background="WhiteSmoke"
+                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   ScrollViewer.CanContentScroll="True" />
+    </Grid>
+</Window>

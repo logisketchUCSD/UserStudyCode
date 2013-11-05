@@ -1,0 +1,206 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8CC94042-4C94-4502-B61C-B65AA630DB6E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Labeler_v2</RootNamespace>
+    <AssemblyName>Labeler_v2</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Ink, Version=1.7.2600.2180, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\\Microsoft Tablet PC Platform SDK\Include\Microsoft.Ink.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommandList\ApplyLabelCmd.cs" />
+    <Compile Include="CommandList\AutoFragmentCmd.cs" />
+    <Compile Include="CommandList\ClearFragmentPointsCmd.cs" />
+    <Compile Include="CommandList\CommitHandFragmentCmd.cs" />
+    <Compile Include="CommandList\HandFragmentCornersCmd.cs" />
+    <Compile Include="CommandList\RemoveLabelCmd.cs" />
+    <Compile Include="CommandList\ResampleCmd.cs" />
+    <Compile Include="DomainInfo.cs" />
+    <Compile Include="FragmentDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FragmentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LabelerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LabelerTool.cs" />
+    <Compile Include="LabelMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FragmentDialogBox.resx">
+      <DependentUpon>FragmentDialogBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FragmentPanel.resx">
+      <DependentUpon>FragmentPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabelerPanel.resx">
+      <DependentUpon>LabelerPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabelMenu.resx">
+      <DependentUpon>LabelMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResampleDialog.resx">
+      <DependentUpon>ResampleDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShapeLabeler.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShapeLabeler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SketchSummary.resx">
+      <DependentUpon>SketchSummary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ResampleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResampleDialog.designer.cs">
+      <DependentUpon>ResampleDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShapeLabeler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShapeLabeler.Designer.cs">
+      <DependentUpon>ShapeLabeler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SketchSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SketchSummary.designer.cs">
+      <DependentUpon>SketchSummary.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Recognition\Featurefy\Featurefy.csproj">
+      <Project>{C2043A9A-A7CA-43AC-A4DF-318A32BCB165}</Project>
+      <Name>Featurefy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Recognition\Fragmenter\Fragmenter.csproj">
+      <Project>{3A7258B5-B5D1-4D75-B988-FB47044759F8}</Project>
+      <Name>Fragmenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\CommandManagement\CommandManagement.csproj">
+      <Project>{50B9CC54-918D-4831-80C4-AA2CA42F57F1}</Project>
+      <Name>CommandManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\ConverterDRS\ConverterDRS.csproj">
+      <Project>{5AFBC088-B78A-42E5-9E3A-1B3762DD6960}</Project>
+      <Name>ConverterDRS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\ConverterJnt\ConverterJnt.csproj">
+      <Project>{03FC5A8F-F2B7-48A5-9871-7E7B33AB3048}</Project>
+      <Name>ConverterJnt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\ConverterXML\ConverterXML.csproj">
+      <Project>{165389E7-414D-49BB-B958-4B521AA1D452}</Project>
+      <Name>ConverterXML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\Files\Files.csproj">
+      <Project>{A92F7726-4185-4B50-866B-2608C790FD92}</Project>
+      <Name>Files</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\InkToSketch\InkToSketch.csproj">
+      <Project>{B9EACD91-C346-4D1F-B818-949C54F031D0}</Project>
+      <Name>InkToSketch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\Metrics\Metrics.csproj">
+      <Project>{D4C849D4-0BFC-4602-9E87-F43ADE00A8CA}</Project>
+      <Name>Metrics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\Set\Set.csproj">
+      <Project>{182FAEC4-3133-4D14-9BE5-5B8718752EE1}</Project>
+      <Name>Set</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\Sketch\Sketch.csproj">
+      <Project>{84AE0BC9-B169-4B44-B320-4825D027BD2C}</Project>
+      <Name>Sketch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SketchPanel\SketchPanel.csproj">
+      <Project>{95C4EC3A-544E-4D26-BB33-70208B193F83}</Project>
+      <Name>SketchPanel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StrokeInfoForm\StrokeInfoForm.csproj">
+      <Project>{1A50D8FE-29AF-47D3-B3E6-1C13DD8E52A1}</Project>
+      <Name>StrokeInfoForm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

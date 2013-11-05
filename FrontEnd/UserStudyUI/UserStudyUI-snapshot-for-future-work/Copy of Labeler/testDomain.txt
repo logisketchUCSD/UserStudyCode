@@ -1,0 +1,4 @@
+HMC Research 07
+Test Wire/Gate Logic Diagram
+Wire 0 Blue
+Gate 1 Red

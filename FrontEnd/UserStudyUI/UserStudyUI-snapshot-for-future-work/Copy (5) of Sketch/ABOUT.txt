@@ -1,0 +1,40 @@
+/**
+ * File: ABOUT.txt
+ *
+ * Authors: Aaron Wolin, Devin Smith, Jason Fennell, and Max Pflueger.
+ * Harvey Mudd College, Claremont, CA 91711.
+ * Sketchers 2006.
+ * 
+ * Use at your own risk.  This code is not maintained and not guaranteed to work.
+ * We take no responsibility for any harm this code may cause.
+ */
+
+Sketch is a collection of classes used to represent a sketch.
+By sketch, we are talking about a hand drawn figure, typically made on a
+Tablet PC.
+
+Sketch:
+	consists of Strokes and Shapes
+	plus attribute information specific to a Sketch
+	
+Stroke:
+	consists of Substrokes
+	plus attribute information specific to a Stroke
+	
+Shape:
+	consists of Substrokes and Shapes
+	knows about what it belongs to (parents)
+	plus attribute information specific to a Shape
+	
+Substroke:
+	consists of Points
+	knows about what it belongs to (parents)
+	plus attribute information specific to a Substroke
+	
+Point:
+	plus attribute information specific to a Point
+	
+
+The main features of Sketch is that it allows Strokes and Substrokes to be split up.  
+When something is split, the whole Sketch is transformed to reflect this split.
+The Sketch also allows new labeled Shapes to be created.

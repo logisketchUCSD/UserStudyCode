@@ -1,0 +1,148 @@
+﻿<Window x:Class="WPFCircuitSimulatorUI.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Help Window" Height="450" Width="400" Icon="LogiSketch mini Icon.ico" Background="Linen">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Program Overview" Background="#82930099" Foreground="Black" FontFamily="Verdana">
+                <FlowDocumentScrollViewer>
+                    <FlowDocument TextAlignment="Left" FontSize="12">
+                        <Paragraph>
+                            Circuit Sketch
+                        </Paragraph>
+                        <Paragraph>
+                            Harvey Mudd College Sketchers 2010
+                        </Paragraph>
+                        <Paragraph>
+                            Circuit Sketch is a program developed for simulating hand drawn sketches
+of digital logic circuits using Tablet PCs.
+                        </Paragraph>
+                        <Paragraph>
+                            How to use:
+                        </Paragraph>
+                        <Paragraph>
+                            1. Start up WPFCircuitSimulatorUI.exe. 
+   Note: You may need to run as administrator if you installed it
+         inside Program Files and are running Windows Vista or Windows 7.
+                        </Paragraph>
+                        <Paragraph>
+                            2. Draw your digital circuit!
+                        </Paragraph>
+                        <Paragraph>
+                            3. Hit the 'Recognize' button.
+                        </Paragraph>
+                        <Paragraph>
+                            4. If your circuit is valid, hit the 'Simulate' button. If it's not valid,
+   correct your circuit by using the hover widgets. To access these,
+   simply hover your stylus in place over the screen for a few seconds.
+                        </Paragraph>
+                        <Paragraph>
+                            5. Once your circuit is valid (you may need to hit 'Recognize' again), 
+   enter simulation mode and toggle the inputs to see your circuit come
+   to life!
+                        </Paragraph>
+                    </FlowDocument>
+                </FlowDocumentScrollViewer>
+            </TabItem>
+            <TabItem Header="Editing" Background="#A6D67413" FontFamily="Verdana">
+                <FlowDocumentScrollViewer>
+                    <FlowDocument FontSize="12">
+                        <Paragraph>
+                            Editing a Drawing
+                        </Paragraph>
+                        <Paragraph>
+                            All editing actions are performed through the use of our Hover Widgets. To bring up the Hover Widgets, hover you pen above the tablet surface, the Hover Widgets should appear around the location of the pen. If the pen touches the tablet surface without interacting with the widgets or moves away from the widgets, the widgets will disappear.
+                        </Paragraph>
+                        <Paragraph>
+                            The three widgets are Selection, Tools, and Label (the last of which only appears after recognition). Tapping the selection widget puts you in selection mode, tapping the Tools widget brings up a small context-based menu, and pressing the Label widget selects the nearest group of strokes and brings up the label menu.
+                        </Paragraph>
+                        <Paragraph>
+                            1. Selection
+                        </Paragraph>
+                        <Paragraph>
+                            Selection mode can be entered by either tapping the selection widget or holding down the stylus button. Once in selection, you can drag the pen across the screen to make a selection box. Any stroke that is 70% inside the box is selected. In selection mode, tapping individual strokes will also bring them in or out of the current selection. When a selection is made, an edit menu appears around the bottom right corner of the selection. Pressing one of these buttons or tapping somewhere outside of the selection (and not on a stroke) will clear the selection and put the user back in Ink mode.
+                        </Paragraph>
+                        <Paragraph>
+                            2. The Edit Menu
+                        </Paragraph>
+                        <Paragraph>
+                            The edit menu is context-sensitive. If there are no strokes selected, the Paste, Delete All, Undo, and Redo buttons appear. If there are strokes selected, Copy, Cut, and Delete appear as well. If there are strokes selected and the sketch has been recognized, Label and Group buttons are added. When a button is pressed that action is performed. If a button is pressed or the you tap outside the menu, the menu disappears and any selection is cleared. Strokes can be moved and re-sized normally.
+                        </Paragraph>
+                    </FlowDocument>
+                </FlowDocumentScrollViewer>
+            </TabItem>
+            <TabItem Header="Recognition" Background="#B52C9C2F" FontFamily="Verdana">
+                <FlowDocumentScrollViewer>
+                    <FlowDocument FontSize="12">
+                        <Paragraph>
+                            Recognizing a Circuit and Correcting Errors
+                        </Paragraph>
+                        <Paragraph>
+                            Once you have a circuit you want recognized, hit the ‘Recognize button’ at the top of the screen. The system will attempt to recognize all strokes in the sketch. After recognition, strokes are colored by the corresponding color of their label. Recognition results are also displayed through tool tips, which appear in the center of a recognized shape when the stylus hovers over it.
+                        </Paragraph>
+                        <Paragraph>
+                            1. Labeling Shapes
+                        </Paragraph>
+                        <Paragraph>
+                            To specify a shape label, you can either hit the label widget to label the shape beneath the stylus or choose the label option on the edit menu after selecting the shape. Either of these actions brings up a list of available labels, such as “AND” or “Wire”. Choose the label you desire.
+                        </Paragraph>
+                        <Paragraph>
+                            2. Grouping Shapes
+                        </Paragraph>
+                        <Paragraph>
+                            You can also select strokes and group them from the edit menu. The strokes will be re-recognized as a single shape and update the label. Other shapes whose strokes have been changed will also be re-recognized.
+                        </Paragraph>
+                        <Paragraph>
+                            3. Redrawing Shapes
+                        </Paragraph>
+                        <Paragraph>
+                            To redraw and recognize strokes, you can erase the strokes, redraw them, and then choose to group or label them.
+                        </Paragraph>
+                        <Paragraph>
+                            4. Correcting connections
+                        </Paragraph>
+                        <Paragraph>
+                            The endpoints of wires are also highlighted by a small box, either red or green. If the box is green, then the system sees that the wire as connected, whereas if the box is red the wire is unconnected. Dragging one of these endpoint highlights to another shape will connect the wire to that shape.
+                        </Paragraph>
+                        <Paragraph>
+                            5. Mesh Highlighting
+                        </Paragraph>
+                        <Paragraph>
+                            The system also gives feedback about the recognized circuit structure. Mesh highlighting helps you see connections between circuit elements. When you stylus is over a circuit element, that element and all wires connected to that element are highlighted. When the you stylus is over a mesh of wires, the whole mesh and all elements connected to the mesh are highlighted.
+                        </Paragraph>
+                    </FlowDocument>
+                </FlowDocumentScrollViewer>
+            </TabItem>
+            <TabItem Header="Simulation" Background="#B2AC0000" FontFamily="Verdana">
+                <FlowDocumentScrollViewer>
+                    <FlowDocument FontSize="12" >
+                        <Paragraph>
+                            Simulation of Your Circuit
+                        </Paragraph>
+                        <Paragraph>
+                            Simulation is separate from editing and recognition correction. Once you have a valid circuit, the simulation button will turn green, and you can press the button to enter simulation mode. The button then says ‘Edit’ to allow you to go back to drawing, editing, and correcting.
+                        </Paragraph>
+                        <Paragraph>
+                            1. Input Toggles
+                        </Paragraph>
+                        <Paragraph>
+                            Once in simulation mode, input and output toggles appear beside the circuit’s inputs/outputs. Input toggles are square and clicking them changes their value between 1 and 0. Output toggles are circular and their values represent the circuit’s output value based on the inputs. The wires of the circuit are highlighted according to what value they hold (light blue for 1, dark blue for 0).
+                        </Paragraph>
+                        <Paragraph>
+                            2. Truth Table
+                        </Paragraph>
+                        <Paragraph>
+                            The truth table provides another means of setting inputs. When a truth table row is highlighted, those inputs are simulated on the circuit. The truth table also provides a box to input a string of input values and allows you to correct text recognition by clicking on the input/output and writing in the desired name. You can bring up the truth table by checking the truth table box at the bottom of the screen.
+                        </Paragraph>
+                        <Paragraph>
+                            3. Clean Circuit
+                        </Paragraph>
+                        <Paragraph>
+                            The clean circuit is a computer generated image of the recognized circuit and interacts the same way as the sketch during simulation. You can display the clean circuit by checking the clean circuit box at the bottom of the screen.
+                        </Paragraph>
+                    </FlowDocument>
+                </FlowDocumentScrollViewer>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

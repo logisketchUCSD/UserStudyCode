@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labeler", "Labeler.csproj", "{A98A0500-F260-431C-A80E-E77FA66081AD}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converter", "..\Converter\Converter.csproj", "{7077A0E7-E282-4F87-AD63-04B3EE485246}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sketch", "..\Sketch\Sketch.csproj", "{84AE0BC9-B169-4B44-B320-4825D027BD2C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A98A0500-F260-431C-A80E-E77FA66081AD}.Debug.ActiveCfg = Debug|.NET
+		{A98A0500-F260-431C-A80E-E77FA66081AD}.Debug.Build.0 = Debug|.NET
+		{A98A0500-F260-431C-A80E-E77FA66081AD}.Release.ActiveCfg = Release|.NET
+		{A98A0500-F260-431C-A80E-E77FA66081AD}.Release.Build.0 = Release|.NET
+		{7077A0E7-E282-4F87-AD63-04B3EE485246}.Debug.ActiveCfg = Debug|.NET
+		{7077A0E7-E282-4F87-AD63-04B3EE485246}.Debug.Build.0 = Debug|.NET
+		{7077A0E7-E282-4F87-AD63-04B3EE485246}.Release.ActiveCfg = Release|.NET
+		{7077A0E7-E282-4F87-AD63-04B3EE485246}.Release.Build.0 = Release|.NET
+		{84AE0BC9-B169-4B44-B320-4825D027BD2C}.Debug.ActiveCfg = Debug|.NET
+		{84AE0BC9-B169-4B44-B320-4825D027BD2C}.Debug.Build.0 = Debug|.NET
+		{84AE0BC9-B169-4B44-B320-4825D027BD2C}.Release.ActiveCfg = Release|.NET
+		{84AE0BC9-B169-4B44-B320-4825D027BD2C}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
