@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrics", "Metrics.csproj", "{D4C849D4-0BFC-4602-9E87-F43ADE00A8CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4C849D4-0BFC-4602-9E87-F43ADE00A8CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C849D4-0BFC-4602-9E87-F43ADE00A8CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C849D4-0BFC-4602-9E87-F43ADE00A8CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C849D4-0BFC-4602-9E87-F43ADE00A8CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

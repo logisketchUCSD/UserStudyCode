@@ -1,0 +1,76 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76FCAD0C-B199-4CC3-8816-E446F984A99E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ThresholdEval</RootNamespace>
+    <AssemblyName>ThresholdEval</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accuracy.cs" />
+    <Compile Include="Autopilot.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stats.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Recognition\CRF\CRF.csproj">
+      <Project>{CB4B991D-758F-4E4A-B730-E8EA0FA70526}</Project>
+      <Name>CRF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Recognition\Featurefy\Featurefy.csproj">
+      <Project>{C2043A9A-A7CA-43AC-A4DF-318A32BCB165}</Project>
+      <Name>Featurefy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Recognition\Fragmenter\Fragmenter.csproj">
+      <Project>{3A7258B5-B5D1-4D75-B988-FB47044759F8}</Project>
+      <Name>Fragmenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConverterXML\ConverterXML.csproj">
+      <Project>{165389E7-414D-49BB-B958-4B521AA1D452}</Project>
+      <Name>ConverterXML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sketch\Sketch.csproj">
+      <Project>{84AE0BC9-B169-4B44-B320-4825D027BD2C}</Project>
+      <Name>Sketch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\statistic\statistic.csproj">
+      <Project>{1ED6E7B8-B221-4E0F-8921-26BA67F2E968}</Project>
+      <Name>statistic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,19 @@
+	BackLine	FrontArc	BackArc	TopArc	BottomArc	Bubble	TopLine	BottomLine	Triangle	GreaterThan	TouchUp	Junk	LabelBoxOther	Entire_OR	Entire_AND	Wire
+BackLine	702	4	105	1	1	2	2	6	1	3	14	17	2	1	1	12	
+FrontArc	3	548	75	2	1	8	2	6	4	103	4	2	26	6	1	6	
+BackArc	141	15	425	5	1	1	1	7	1	7	9	9	1	1	1	19	
+TopArc	1	1	2	141	5	3	22	3	1	2	7	1	1	1	1	25	
+BottomArc	1	1	2	3	162	2	2	18	1	1	3	1	2	1	1	15	
+Bubble	1	5	6	7	8	443	6	5	1	29	7	7	36	1	1	3	
+TopLine	7	1	8	23	2	6	64	5	1	3	12	5	2	1	1	18	
+BottomLine	5	1	9	1	20	1	7	77	1	2	10	1	1	1	1	17	
+Triangle	1	16	2	1	1	18	1	1	24	13	1	1	17	4	4	2	
+GreaterThan	8	44	30	1	2	1	1	1	1	76	1	2	2	1	1	1	
+TouchUp	14	3	10	9	11	3	3	6	1	3	11	6	5	1	1	14	
+Junk	5	1	4	3	3	3	5	4	1	2	3	2	5	1	1	10	
+LabelBoxOther	2	26	3	9	32	18	31	19	3	19	6	2	52	1	10	96	
+Entire_OR	1	5	1	1	1	3	1	1	8	1	1	1	9	22	7	1	
+Entire_AND	1	13	2	1	1	4	1	1	3	2	1	2	2	7	16	1	
+Wire	324	34	193	279	391	231	115	133	9	34	148	98	143	1	2	2001	
+
+

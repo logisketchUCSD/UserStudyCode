@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classifier", "Classifier\Classifier.csproj", "{2BC6A3AD-D58F-4D3F-A637-3F7554FCA8FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cluster", "..\..\Recognition\Cluster\Cluster\Cluster.csproj", "{D51A5789-0F0F-405A-BDA5-15AF1060102E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BC6A3AD-D58F-4D3F-A637-3F7554FCA8FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC6A3AD-D58F-4D3F-A637-3F7554FCA8FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC6A3AD-D58F-4D3F-A637-3F7554FCA8FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC6A3AD-D58F-4D3F-A637-3F7554FCA8FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51A5789-0F0F-405A-BDA5-15AF1060102E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51A5789-0F0F-405A-BDA5-15AF1060102E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51A5789-0F0F-405A-BDA5-15AF1060102E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51A5789-0F0F-405A-BDA5-15AF1060102E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

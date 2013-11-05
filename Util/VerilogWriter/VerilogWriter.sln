@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerilogWriter", "VerilogWriter.csproj", "{6F05B746-4A15-408E-AD2C-8B7871DD1126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pin", "..\Pin\Pin\Pin.csproj", "{8D2FA6D8-9054-47AF-9B59-3DD47EFB8E8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CicuitRec", "..\..\Recognition\CircuitRec\CicuitRec.csproj", "{3E285121-1B5F-4012-8489-6681E36ABA33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sketch", "..\Sketch\Sketch.csproj", "{84AE0BC9-B169-4B44-B320-4825D027BD2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F05B746-4A15-408E-AD2C-8B7871DD1126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F05B746-4A15-408E-AD2C-8B7871DD1126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F05B746-4A15-408E-AD2C-8B7871DD1126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F05B746-4A15-408E-AD2C-8B7871DD1126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D2FA6D8-9054-47AF-9B59-3DD47EFB8E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2FA6D8-9054-47AF-9B59-3DD47EFB8E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2FA6D8-9054-47AF-9B59-3DD47EFB8E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2FA6D8-9054-47AF-9B59-3DD47EFB8E8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E285121-1B5F-4012-8489-6681E36ABA33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E285121-1B5F-4012-8489-6681E36ABA33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E285121-1B5F-4012-8489-6681E36ABA33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E285121-1B5F-4012-8489-6681E36ABA33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84AE0BC9-B169-4B44-B320-4825D027BD2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84AE0BC9-B169-4B44-B320-4825D027BD2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84AE0BC9-B169-4B44-B320-4825D027BD2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84AE0BC9-B169-4B44-B320-4825D027BD2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

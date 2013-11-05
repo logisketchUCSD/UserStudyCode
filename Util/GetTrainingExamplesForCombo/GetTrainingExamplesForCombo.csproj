@@ -1,0 +1,69 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D812DD4B-430B-4BD0-8C63-E7D527086526}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GetTrainingExamplesForCombo</RootNamespace>
+    <AssemblyName>GetTrainingExamplesForCombo</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Recognition\CombinationRecognizer\CombinationRecognizer.csproj">
+      <Project>{4A871ACD-7374-4349-A310-432CD99B09FF}</Project>
+      <Name>CombinationRecognizer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Recognition\Featurefy\Featurefy.csproj">
+      <Project>{C2043A9A-A7CA-43AC-A4DF-318A32BCB165}</Project>
+      <Name>Featurefy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConverterXML\ConverterXML.csproj">
+      <Project>{165389E7-414D-49BB-B958-4B521AA1D452}</Project>
+      <Name>ConverterXML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sketch\Sketch.csproj">
+      <Project>{84AE0BC9-B169-4B44-B320-4825D027BD2C}</Project>
+      <Name>Sketch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities\Utilities.csproj">
+      <Project>{7C9A72A3-E426-4312-9F31-AE340B0EF4C8}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

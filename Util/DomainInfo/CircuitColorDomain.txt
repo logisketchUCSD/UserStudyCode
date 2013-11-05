@@ -1,0 +1,15 @@
+HMC Research 07
+Wires are wires, other is for gates not listed, text is not labeled, UNKNOWN is for strokes that cannot be understood
+Wire Blue
+Text Salmon
+AND Brown
+OR Green
+NOT Purple
+NAND DarkOrange
+NOR HotPink
+XOR DarkCyan
+XNOR MediumOrchid
+NotBubble Gold
+FullAdder Aquamarine
+Subtractor LimeGreen
+Unknown Black

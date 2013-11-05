@@ -1,0 +1,42 @@
+_SketchDirectory = C:\Documents and Settings\eric\My Documents\Research\CURRENT\Classifying and Clustering\Sketches\Digital Circuits Cleaned
+## = _SketchDirectory = C:\Documents and Settings\eric\Desktop
+_StrokeNetworkDirectory = C:\Documents and Settings\eric\My Documents\Research\CURRENT\Classifying and Clustering\DC_StrokeNetworks_ThreeWay
+_ClusterNetworkDirectory = C:\Documents and Settings\eric\My Documents\Research\CURRENT\Classifying and Clustering\DC_ClusterNetworks_ThreeWay
+_StrokeFeatureFilesDirectory = C:\Documents and Settings\eric\My Documents\Research\CURRENT\Classifying and Clustering\DC StrokeFeatures New Int Symmetric - with Lmod
+_ClusterFeatureFilesDirectory = C:\Documents and Settings\eric\My Documents\Research\CURRENT\Classifying and Clustering\DC ClusterFeatures
+_StrokeResultsDirectory = C:\Documents and Settings\eric\My Documents\Research\CURRENT\Classifying and Clustering\DC StrokeResults
+_ClusterResultsDirectory = C:\Documents and Settings\eric\My Documents\Research\CURRENT\Classifying and Clustering\DC ClusterResults
+_DomainsDirectory = C:\Documents and Settings\eric\My Documents\Research\CURRENT\Classifying and Clustering\Domains
+_ImageDirectory = C:\Documents and Settings\eric\My Documents\Research\CURRENT\Classifying and Clustering\ImageDefinitions
+NumTrainingEpochs = 3000
+NumInputsStroke2way = 5
+NumOutputsStroke2way = 1
+NumInputsStroke3way = 5
+NumOutputsStroke3way = 3
+NumInputsStroke2x2way_2 = 5
+NumOutputsStroke2x2way_2 = 1
+LayersStroke2way = 3 2 1
+LayersStroke3way = 5 3
+LayersStroke2x2way_2 = 5 1
+NumInputsCluster2way = 8
+NumOutputsCluster2way = 1
+NumInputsCluster3way_1 = 8
+NumOutputsCluster3way_1 = 1
+NumInputsCluster3way_2 = 8
+NumOutputsCluster3way_2 = 1
+NumInputsCluster3way_3 = 8
+NumOutputsCluster3way_3 = 1
+LayersCluster2way = 2 1
+LayersCluster3way_1 = 2 1
+LayersCluster3way_2 = 2 1
+LayersCluster3way_3 = 2 1
+## = Old = _BitString2Way = 1000100011011010111
+## = All = _BitString2Way = 11111111111111111111111
+## = FT_TnT = _BitString2Way = 11001011111111111101010
+## = DC_TnT = 
+_BitString2Way = 11101011111001111001010
+## = All = _BitString3Way = 11111111111111111111111
+## = DigitalCircuits_3way = 
+_BitString3Way = 11001001110101110111111
+## = FamilyTree_3way = _BitString3Way = 11010011111101111111111
+_BitString2x2Way_2 = 1111111111111111111

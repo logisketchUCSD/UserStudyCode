@@ -1,0 +1,153 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2BC6A3AD-D58F-4D3F-A637-3F7554FCA8FA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Classifier</RootNamespace>
+    <AssemblyName>Classifier</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Research\VS 2005 Projects\aforge_src\Release\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Neuro, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Research\VS 2005 Projects\aforge_src\Release\AForge.Neuro.dll</HintPath>
+    </Reference>
+    <Reference Include="ConverterXML, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ConverterXML\bin\Release\ConverterXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Featurefy, Version=1.0.3348.26824, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recognition\Featurefy\bin\Release\Featurefy.dll</HintPath>
+    </Reference>
+    <Reference Include="IACore, Version=1.7.6223.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\\Microsoft Tablet PC Platform SDK\Include\IACore.dll</HintPath>
+    </Reference>
+    <Reference Include="Image-Based Recognizer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recognition\Image-Based Recognizer\Image-Based Recognizer\bin\Debug\Image-Based Recognizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Ink, Version=1.7.2600.2180, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\\Microsoft Tablet PC Platform SDK\Include\Microsoft.Ink.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Ink.Analysis, Version=1.7.6223.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\\Microsoft Tablet PC Platform SDK\Include\Microsoft.Ink.Analysis.dll</HintPath>
+    </Reference>
+    <Reference Include="NeuralNetAForge, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Research\VS 2005 Projects\NeuralNetAForge\bin\Release\NeuralNetAForge.dll</HintPath>
+    </Reference>
+    <Reference Include="Sketch, Version=1.0.3296.25841, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Sketch\bin\Release\Sketch.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Utilities\Utilities\bin\Release\Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="XMLReadWrite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Research\VS 2005 Projects\XMLReadWrite\XMLReadWrite\bin\Release\XMLReadWrite.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClusterAccuracyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClusterAccuracyForm.Designer.cs">
+      <DependentUpon>ClusterAccuracyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClusterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClusterForm.Designer.cs">
+      <DependentUpon>ClusterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DomainInfoClassifier.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ClusterAccuracyForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ClusterAccuracyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClusterForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ClusterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Recognition\Cluster\Cluster\Cluster.csproj">
+      <Project>{D51A5789-0F0F-405A-BDA5-15AF1060102E}</Project>
+      <Name>Cluster</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

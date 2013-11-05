@@ -1,0 +1,20 @@
+What the program expects:
+
+1)Name for the module (string)
+
+2)ArrayList of inputs to circuit
+  2a) corresponding Array of bussizes for each input (integers)
+
+3)ArrayList of outputs from circuit
+  2a) corresponding Array of bussizes for each output (integers)
+
+For each gate:
+1)Name (example: and1, or5, etc.)
+2)Type (and, or, mux, etc.)
+3)output name
+4)input names (ArrayList)
+   4a)for a mux, make the first input select
+   4b)for a flipflop reset and clock should not be in input list
+   4b)for an enabled flip flop make the first input enabler
+5)output size (# of bits - integer)
+

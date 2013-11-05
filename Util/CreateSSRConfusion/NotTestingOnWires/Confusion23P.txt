@@ -1,0 +1,19 @@
+	BackLine	FrontArc	BackArc	TopArc	BottomArc	Bubble	TopLine	BottomLine	Triangle	GreaterThan	TouchUp	Junk	LabelBoxOther	Entire_OR	Entire_AND	Wire
+BackLine	6	1	1	1	1	1	1	1	2	1	1	6	1	1	1	1	
+FrontArc	1	11	1	1	1	1	1	5	9	3	1	1	1	1	1	1	
+BackArc	1	1	9	1	1	1	1	7	2	1	1	3	1	1	1	1	
+TopArc	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	
+BottomArc	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	
+Bubble	1	1	1	1	1	9	1	1	4	1	1	1	1	1	1	1	
+TopLine	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	
+BottomLine	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	
+Triangle	1	1	1	1	1	1	1	1	7	1	1	1	1	1	1	1	
+GreaterThan	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	
+TouchUp	1	1	1	1	1	2	1	1	1	1	1	1	1	1	1	1	
+Junk	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	
+LabelBoxOther	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	
+Entire_OR	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	
+Entire_AND	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	
+Wire	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	
+
+
